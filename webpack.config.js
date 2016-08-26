@@ -4,11 +4,14 @@ var webpack = require('webpack')
 var path = require('path')
 var autoprefixer = require('autoprefixer')
 
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var extractCSS = new ExtractTextPlugin('bundle.css')
+
 module.exports = {
   entry: './index.js',
   output: {
-    path: './',
-    filename: 'bundle.min.js',
+    path: './bundle',
+    filename: 'bundle.js',
     publicPath: '/'
   },
   module: {
@@ -16,7 +19,7 @@ module.exports = {
 
       {
         test: /\.s?css$/,
-        loader: 'style!css!postcss!sass'
+        loader: extractCSS.extract(['css', 'postcss', 'sass'])
       },
       {
         test: /\.jsx?$/,
@@ -49,5 +52,8 @@ module.exports = {
   },
   postcss: [
     autoprefixer()
+  ],
+  plugins: [
+    extractCSS
   ]
 }
