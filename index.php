@@ -1,4 +1,4 @@
-<html  id="app">
+<html id="app">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
@@ -204,32 +204,9 @@
 </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.1.1/jquery.rateyo.min.css">
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.1.1/jquery.rateyo.min.js"></script>
-<script 
-src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.js"></script>
-<script src="https://cdn.jsdelivr.net/vue.resource/0.9.1/vue-resource.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-<script src="./ldc.js"></script>
-
-<script>
-	$(document).ready(function(){
-		$('.question-header:first').trigger("click");
-		$("#getresult").click(function(){
-			$(".question:last").collapse("show")
-		});
-		$(".question:last").on('shown.bs.collapse', function () {
-			window.scrollTo(0, $("#rating-anchor").position().top);
-		});
-		$("#rating-stars").rateYo({
-			rating: 0.0
-		});
-	});
-</script>
+<script src="bundle.min.js"></script>
 
 </body>
 </html>
